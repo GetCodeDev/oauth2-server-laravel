@@ -23,14 +23,7 @@
         "illuminate/http": "^7",
         "illuminate/support": "^7",
         "league/oauth2-server": "^5.0",
-        "symfony/psr-http-message-bridge": "^0.2",
-        "zendframework/zend-diactoros": "^1.3",
         "composer/installers": "^1.9"
-    },
-    "require-dev": {
-        "graham-campbell/testbench": "^3.2",
-        "mockery/mockery": "^0.9.5",
-        "phpunit/phpunit": "^5.4"
     },
     "autoload": {
         "psr-4": {
@@ -49,7 +42,11 @@
         "laravel": {
             "providers": [
                 "LucaDegasperi\\OAuth2Server\\OAuth2ServerServiceProvider"
-            ]
+            ],
+            "aliases":{
+                "AuthorizationServer": "LucaDegasperi\\OAuth2Server\\Facades\\AuthorizationServerFacade",
+                "ResourceServer": "LucaDegasperi\\OAuth2Server\\Facades\\ResourceServerFacade"
+            }
         }
     },
     "minimum-stability": "stable"
