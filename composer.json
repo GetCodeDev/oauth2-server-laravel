@@ -46,10 +46,11 @@
         ]
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "6.0-dev"
+        "laravel": {
+            "providers": [
+                "LucaDegasperi\\OAuth2Server\\OAuth2ServerServiceProvider"
+            ]
         }
     },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    "minimum-stability": "stable"
 }
