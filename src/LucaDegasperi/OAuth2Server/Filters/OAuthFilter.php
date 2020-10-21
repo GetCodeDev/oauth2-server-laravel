@@ -17,7 +17,9 @@ class OAuthFilter
     public function handle($request, Closure $next)
     {
         try {
-            ResourceServer::isValid(Config::get('lucadegasperi/oauth2-server-laravel::oauth2.http_headers_only'));
+            ResourceServer::isValid(config('oauth2.http_headers_only'));
+
+            return $next($request);
         } catch (\League\OAuth2\Server\Exception\InvalidAccessTokenException $e) {
             return Response::json(array(
                 'status' => 401,
